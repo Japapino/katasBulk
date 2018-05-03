@@ -37,16 +37,20 @@ public class mainRunner {
 			}
 		}
 		
+		List<Integer> index = new ArrayList<>(map.keySet()); 
 		if (map.size() == 0){
 			return -1;
 		}
 
-		List<Integer> index = new ArrayList<>(map.keySet()); 
-		
 		int ans = Math.min(index.get(0), index.get(1)); 
 		
-		System.out.println(index);
+		if (map.size() == 1){
+			return (int) index.get(0);
+		}
 		
+		
+		System.out.println(index);
+
 		return (int) map.get(ans); 
 	}
 }
