@@ -1,6 +1,7 @@
 package katasBulk;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -32,19 +33,20 @@ public class mainRunner {
 			for (int x = i + 1; x < a.length; x++) {
 				if (a[i] == a[x]) {
 					map.put(x, a[x]);
-					System.out.println(a[i] + ", " + a[x]);
 				}
 			}
 		}
-		System.out.println(map);
 		
-		List<Integer> index = new ArrayList<>(map.keySet()); 
-		
-		System.out.println(index);
 		if (map.size() == 0){
 			return -1;
 		}
+
+		List<Integer> index = new ArrayList<>(map.keySet()); 
 		
-		return 0; 
+		int ans = Math.min(index.get(0), index.get(1)); 
+		
+		System.out.println(index);
+		
+		return (int) map.get(ans); 
 	}
 }
